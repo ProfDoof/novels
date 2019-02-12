@@ -110,7 +110,7 @@ URLINFO = namedtuple('urlInfo', 'url_parts chapter_number')
 def setup_web_driver(debug):
     # setting the page load strategy to eager means we no longer have
     # to wait for adds to load before we scrape the page
-    capabilities = DesiredCapabilities.PHANTOMJS
+    capabilities = DesiredCapabilities.PHANTOMJS.copy()
     capabilities["pageLoadStrategy"] = "eager"
     web_driver = webdriver.PhantomJS(desired_capabilities=capabilities)
     if debug:
