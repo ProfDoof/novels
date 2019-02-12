@@ -114,7 +114,7 @@ def setup_web_driver(debug):
     capabilities["pageLoadStrategy"] = "eager"
     web_driver = webdriver.PhantomJS(desired_capabilities=capabilities)
     if debug:
-        capabilities = DesiredCapabilities.FIREFOX
+        capabilities = DesiredCapabilities.FIREFOX.copy()
         capabilities["pageLoadStrategy"] = "eager"
         web_driver = webdriver.Firefox(capabilities=capabilities)
 
